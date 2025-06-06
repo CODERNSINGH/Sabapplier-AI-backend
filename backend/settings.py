@@ -54,7 +54,20 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'users',
+    'rest_framework.authtoken',
+
 ]
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
+CORS_ALLOW_ALL_ORIGINS = True  # For dev only. Use whitelist for production.
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
